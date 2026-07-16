@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class questao2 {
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    int numero;
+    int soma = 0;
+    int quantidade = 0;
+
+    do {
+
+        System.out.print("Digite um número positivo (negativo para sair): ")
+        numero = scanner.nextInt();
+
+        if (numero >= 0) {
+            soma += numero;
+            quantidade++;
+        }
+
+    } while (numero >= 0);
+
+    if (quantidade > 0) {
+        double media = (double) soma / quantidade;
+        System.out.printf("Média = %.2f\n", media);
+
+    } else {
+        System.out.println("Nenhum número válido foi digitado.");
+    }
+
+    scanner.close();
+
+    }
+}
