@@ -1,22 +1,25 @@
 import java.util.Scanner;
 public class questao1 {
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
-        
-        int numero;
-        int contador = 1;
-        
-        System.out.print("Digite um número: ");
-        numero = scanner.nextInt();
 
-        System.out.println("\nTabuada do " + numero + ":");
+        double altura;
+        double soma = 0;
+        double media;
 
-        do {
+        for (int i = 1; i <= 5; i++) {
 
-            System.out.println(numero + " x " + contador + " = " + (numero * contador));
-            contador++;
+            System.out.print("Digite a altura do aluno " + i + ": ");
+            altura = scanner.nextDouble();
 
-        } while (contador <= 10);
+            soma += altura;
+        }
+
+        media = soma / 5;
+
+        System.out.printf("Média das alturas = %.2f%n", media);
 
         scanner.close();
     }
