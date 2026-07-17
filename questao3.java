@@ -4,15 +4,36 @@ public class questao3 {
 
         Scanner scanner = new Scanner(System.in);
 
-        int numero;
+        int[] vetor1 = new int[5];
+        int[] vetor2 = new int[5];
+        int[] vetor3 = new int[5];
 
-        System.out.print("Digite um número inteiro positivo: ");
-        numero = scanner.nextInt();
+        System.out.println("Digite os valores do primeiro vetor:");
 
-        System.out.println("Contagem regressiva:");
+        for (int i = 0; i < 5; i++) {
 
-        for (int i = numero; i >= 0; i--) {
-            System.out.print(i + " ");
+            System.out.print("Posição " + i + ": ");
+            vetor1[i] = scanner.nextInt();
+
+        }
+
+        System.out.println("\nDigite os valores do segundo vetor:");
+
+        for (int i = 0; i < 5; i++) {
+
+            System.out.print("Posição " + i + ": ");
+            vetor2[i] = scanner.nextInt();
+
+        }
+
+        for (int i = 0; i < 5; i++) {
+            vetor3[i] = vetor1[i] + vetor2[i];
+        }
+
+        System.out.println("\nVetor Resultante:");
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println(vetor3[i]);
         }
 
         scanner.close();

@@ -4,15 +4,23 @@ public class questao2 {
 
         Scanner scanner = new Scanner(System.in);
 
-        int numero;
+        int[] numeros = new int[8];
 
-        System.out.print("Digite um número inteiro positivo: ");
-        numero = scanner.nextInt();
+        for (int i = 0; i < numeros.length; i++) {
 
-        System.out.println("Sequência:");
+            System.out.print("Digite o " + (i + 1) + "º número: ");
+            numeros[i] = scanner.nextInt();
 
-        for (int i = 0; i <= numero; i++) {
-            System.out.print(i + " ");
+        }
+
+        System.out.println("\nNúmeros pares:");
+
+        for (int i = 0; i < numeros.length; i++) {
+
+            if (numeros[i] % 2 == 0) {
+                System.out.println(numeros[i]);
+            }
+
         }
 
         scanner.close();

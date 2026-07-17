@@ -4,25 +4,36 @@ public class questao4 {
 
         Scanner scanner = new Scanner(System.in);
 
-        int numero;
-        int fatorial = 1;
+        int[] numeros = new int[6];
 
-        System.out.print("Digite um número inteiro positivo: ");
-        numero = scanner.nextInt();
+        for (int i = 0; i < numeros.length; i++) {
 
-        if (numero == 0 || numero == 1) {
+            System.out.print("Digite o " + (i + 1) + "º número: ");
+            numeros[i] = scanner.nextInt();
 
-            fatorial = 1;
+        }
 
-        } else {
+        for (int i = 0; i < numeros.length - 1; i++) {
 
-            for (int i = 1; i <= numero; i++) {
-                fatorial *= i;
+            for (int j = i + 1; j < numeros.length; j++) {
+
+                if (numeros[i] > numeros[j]) {
+
+                    int aux = numeros[i];
+                    numeros[i] = numeros[j];
+                    numeros[j] = aux;
+
+                }
+
             }
 
         }
 
-        System.out.println("Fatorial de " + numero + " = " + fatorial);
+        System.out.println("\nValores em ordem crescente:");
+
+        for (int numero : numeros) {
+            System.out.println(numero);
+        }
 
         scanner.close();
     }

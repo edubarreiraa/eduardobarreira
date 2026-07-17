@@ -1,25 +1,32 @@
 import java.util.Scanner;
+
 public class questao1 {
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        double altura;
-        double soma = 0;
-        double media;
+        String[] nomes = new String[8];
 
-        for (int i = 1; i <= 5; i++) {
-
-            System.out.print("Digite a altura do aluno " + i + ": ");
-            altura = scanner.nextDouble();
-
-            soma += altura;
+        for (int i = 0; i < nomes.length; i++) {
+            System.out.print("Digite o nome do participante " + (i + 1) + ": ");
+            nomes[i] = scanner.nextLine();
         }
 
-        media = soma / 5;
+        System.out.print("\nDigite o nome que deseja pesquisar: ");
+        String busca = scanner.nextLine();
 
-        System.out.printf("Média das alturas = %.2f%n", media);
+        int contador = 0;
+
+        for (int i = 0; i < nomes.length; i++) {
+
+            if (nomes[i].equalsIgnoreCase(busca)) {
+                contador++;
+            }
+
+        }
+
+        System.out.println("O nome \"" + busca + "\" aparece " + contador + " vez(es).");
 
         scanner.close();
     }
