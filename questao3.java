@@ -4,36 +4,38 @@ public class questao3 {
 
         Scanner scanner = new Scanner(System.in);
 
-        int[] vetor1 = new int[5];
-        int[] vetor2 = new int[5];
-        int[] vetor3 = new int[5];
+        int[][] matriz = new int[2][2];
 
-        System.out.println("Digite os valores do primeiro vetor:");
+        System.out.println("Digite os valores da matriz:");
 
-        for (int i = 0; i < 5; i++) {
+        for (int linha = 0; linha < 2; linha++) {
 
-            System.out.print("Posição " + i + ": ");
-            vetor1[i] = scanner.nextInt();
+            for (int coluna = 0; coluna < 2; coluna++) {
 
-        }
+                System.out.print("Posição [" + linha + "][" + coluna + "]: ");
+                matriz[linha][coluna] = scanner.nextInt();
 
-        System.out.println("\nDigite os valores do segundo vetor:");
-
-        for (int i = 0; i < 5; i++) {
-
-            System.out.print("Posição " + i + ": ");
-            vetor2[i] = scanner.nextInt();
+            }
 
         }
 
-        for (int i = 0; i < 5; i++) {
-            vetor3[i] = vetor1[i] + vetor2[i];
-        }
+        System.out.println("\nValores pares encontrados:");
 
-        System.out.println("\nVetor Resultante:");
+        for (int linha = 0; linha < 2; linha++) {
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println(vetor3[i]);
+            for (int coluna = 0; coluna < 2; coluna++) {
+
+                if (matriz[linha][coluna] % 2 == 0) {
+
+                    System.out.println(
+                        "Valor: " + matriz[linha][coluna] +
+                        " | Posição: [" + linha + "][" + coluna + "]"
+                    );
+
+                }
+
+            }
+
         }
 
         scanner.close();

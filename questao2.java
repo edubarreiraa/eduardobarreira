@@ -4,22 +4,63 @@ public class questao2 {
 
         Scanner scanner = new Scanner(System.in);
 
-        int[] numeros = new int[8];
+        int[][] matrizA = new int[2][2];
+        int[][] matrizB = new int[2][2];
+        int[][] resultado = new int[2][2];
 
-        for (int i = 0; i < numeros.length; i++) {
+        System.out.println("Digite os valores da primeira matriz:");
 
-            System.out.print("Digite o " + (i + 1) + "º número: ");
-            numeros[i] = scanner.nextInt();
+        for (int linha = 0; linha < 2; linha++) {
+
+            for (int coluna = 0; coluna < 2; coluna++) {
+
+                System.out.print("A[" + linha + "][" + coluna + "]: ");
+                matrizA[linha][coluna] = scanner.nextInt();
+
+            }
 
         }
 
-        System.out.println("\nNúmeros pares:");
+        System.out.println("\nDigite os valores da segunda matriz:");
 
-        for (int i = 0; i < numeros.length; i++) {
+        for (int linha = 0; linha < 2; linha++) {
 
-            if (numeros[i] % 2 == 0) {
-                System.out.println(numeros[i]);
+            for (int coluna = 0; coluna < 2; coluna++) {
+
+                System.out.print("B[" + linha + "][" + coluna + "]: ");
+                matrizB[linha][coluna] = scanner.nextInt();
+
             }
+
+        }
+
+        for (int linha = 0; linha < 2; linha++) {
+
+            for (int coluna = 0; coluna < 2; coluna++) {
+
+                resultado[linha][coluna] = 0;
+
+                for (int k = 0; k < 2; k++) {
+
+                    resultado[linha][coluna] += matrizA[linha][k] * matrizB[k][coluna];
+
+                }
+
+            }
+
+        }
+
+        System.out.println("\nMatriz Resultante:");
+
+        for (int linha = 0; linha < 2; linha++) {
+
+            for (int coluna = 0; coluna < 2; coluna++) {
+
+                System.out.print(resultado[linha][coluna] + "\t");
+
+            }
+
+            System.out.println();
 
         }
 

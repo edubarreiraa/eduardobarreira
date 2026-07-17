@@ -1,32 +1,37 @@
 import java.util.Scanner;
-
 public class questao1 {
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        String[] nomes = new String[8];
+        int[][] matriz = new int[3][3];
 
-        for (int i = 0; i < nomes.length; i++) {
-            System.out.print("Digite o nome do participante " + (i + 1) + ": ");
-            nomes[i] = scanner.nextLine();
-        }
+        System.out.println("Digite os valores da matriz 3x3:");
 
-        System.out.print("\nDigite o nome que deseja pesquisar: ");
-        String busca = scanner.nextLine();
+        for (int linha = 0; linha < 3; linha++) {
 
-        int contador = 0;
+            for (int coluna = 0; coluna < 3; coluna++) {
 
-        for (int i = 0; i < nomes.length; i++) {
+                System.out.print("Posição [" + linha + "][" + coluna + "]: ");
+                matriz[linha][coluna] = scanner.nextInt();
 
-            if (nomes[i].equalsIgnoreCase(busca)) {
-                contador++;
             }
 
         }
 
-        System.out.println("O nome \"" + busca + "\" aparece " + contador + " vez(es).");
+        System.out.println("\nMatriz:");
+
+        for (int linha = 0; linha < 3; linha++) {
+
+            for (int coluna = 0; coluna < 3; coluna++) {
+
+                System.out.print(matriz[linha][coluna] + "\t");
+
+            }
+
+            System.out.println();
+
+        }
 
         scanner.close();
     }
