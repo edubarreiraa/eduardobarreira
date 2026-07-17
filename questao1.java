@@ -1,35 +1,51 @@
 import java.util.Scanner;
+
+class Produto {
+
+    String nome;
+    double preco;
+    int quantidade;
+
+    public Produto(String nome, double preco, int quantidade) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+}
+
 public class questao1 {
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        int[][] matriz = new int[3][3];
+        Produto[] produtos = new Produto[5];
 
-        System.out.println("Digite os valores da matriz 3x3:");
+        for (int i = 0; i < produtos.length; i++) {
 
-        for (int linha = 0; linha < 3; linha++) {
+            System.out.println("\nProduto " + (i + 1));
 
-            for (int coluna = 0; coluna < 3; coluna++) {
+            System.out.print("Nome: ");
+            String nome = scanner.nextLine();
 
-                System.out.print("Posição [" + linha + "][" + coluna + "]: ");
-                matriz[linha][coluna] = scanner.nextInt();
+            System.out.print("Preço: ");
+            double preco = scanner.nextDouble();
 
-            }
+            System.out.print("Quantidade em estoque: ");
+            int quantidade = scanner.nextInt();
+            scanner.nextLine();
 
+            produtos[i] = new Produto(nome, preco, quantidade);
         }
 
-        System.out.println("\nMatriz:");
+        System.out.println("\n===== PRODUTOS CADASTRADOS =====");
 
-        for (int linha = 0; linha < 3; linha++) {
+        for (Produto produto : produtos) {
 
-            for (int coluna = 0; coluna < 3; coluna++) {
-
-                System.out.print(matriz[linha][coluna] + "\t");
-
-            }
-
-            System.out.println();
+            System.out.println("----------------------------");
+            System.out.println("Nome: " + produto.nome);
+            System.out.printf("Preço: R$ %.2f%n", produto.preco);
+            System.out.println("Quantidade: " + produto.quantidade);
 
         }
 
